@@ -81,128 +81,67 @@
 
         .form-section h2 {
             color: #333;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-size: 1.5em;
             font-weight: 400;
+            text-align: center;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-            font-size: 0.95em;
-        }
-
-        input[type="text"],
-        textarea {
+        .form-embed {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            font-size: 1em;
-            font-family: inherit;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input[type="text"]:focus,
-        textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 14px 40px;
+            min-height: 600px;
             border: none;
-            border-radius: 6px;
-            font-size: 1em;
-            font-weight: 500;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.3s;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .messages-section {
-            margin-top: 50px;
-        }
-
-        .messages-section h2 {
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 1.5em;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .message-card {
-            background: white;
-            border: 1px solid #e1e4ed;
             border-radius: 8px;
+            background: white;
+        }
+
+        .instructions {
+            background: #e8eef5;
             padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            animation: slideIn 0.5s ease-out;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #667eea;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+        .instructions h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            font-weight: 500;
         }
 
-        .message-card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: box-shadow 0.3s;
-        }
-
-        .message-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .message-author {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 1.05em;
-        }
-
-        .message-date {
-            color: #999;
-            font-size: 0.85em;
-            margin-left: 12px;
-        }
-
-        .message-text {
-            color: #444;
+        .instructions p {
+            color: #555;
             line-height: 1.7;
-            font-size: 1em;
+            margin-bottom: 10px;
         }
 
-        .no-messages {
+        .instructions ol {
+            margin-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .placeholder-text {
             text-align: center;
+            padding: 60px 20px;
             color: #999;
-            padding: 40px;
             font-style: italic;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed #ddd;
+        }
+
+        .placeholder-text strong {
+            display: block;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-style: normal;
         }
 
         @media (max-width: 768px) {
@@ -216,6 +155,10 @@
             
             .form-section {
                 padding: 25px 20px;
+            }
+
+            .form-embed {
+                min-height: 500px;
             }
         }
     </style>
@@ -238,87 +181,56 @@
 
             <div class="form-section">
                 <h2>Share Your Message</h2>
-                <form id="messageForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" required placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" required placeholder="Share your thoughts, encouragement, or a favorite memory..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Your Support</button>
-                </form>
+                
+                <!-- REPLACE THE src URL BELOW WITH YOUR MICROSOFT FORM EMBED LINK -->
+                <iframe 
+                    class="form-embed" 
+                    src="YOUR_MICROSOFT_FORM_EMBED_LINK_HERE"
+                    frameborder="0" 
+                    marginwidth="0" 
+                    marginheight="0" 
+                    allowfullscreen>
+                </iframe>
+
+                <!-- This placeholder shows until you add your form -->
+                <div class="placeholder-text">
+                    <strong>📝 Your Microsoft Form Will Appear Here</strong>
+                    Follow the instructions below to embed your form
+                </div>
             </div>
 
-            <div class="messages-section">
-                <h2>Messages from the Team</h2>
-                <div id="messagesContainer">
-                    <div class="no-messages">Be the first to share a message of support.</div>
-                </div>
+            <div class="instructions">
+                <h3>📋 Setup Instructions:</h3>
+                <ol>
+                    <li><strong>Create your Microsoft Form:</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Go to <a href="https://forms.office.com" target="_blank" style="color: #667eea;">forms.office.com</a></li>
+                            <li>Click "New Form"</li>
+                            <li>Add questions: "Your Name" and "Your Message"</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 15px;"><strong>Get the embed link:</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Click the "Share" button in your form</li>
+                            <li>Click "Embed"</li>
+                            <li>Copy the URL from the <code>src="..."</code> part of the embed code</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 15px;"><strong>Update this page:</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Open this HTML file in a text editor</li>
+                            <li>Find the line that says <code>src="YOUR_MICROSOFT_FORM_EMBED_LINK_HERE"</code></li>
+                            <li>Replace it with your actual form URL</li>
+                            <li>Remove or comment out the placeholder div below the iframe</li>
+                            <li>Save and re-upload to GitHub Pages</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+                    <strong>💡 Tip:</strong> You can view all submitted messages anytime in the "Responses" tab of your Microsoft Form!
+                </p>
             </div>
         </div>
     </div>
-
-    <script>
-        const messages = [];
-
-        function formatDate() {
-            const now = new Date();
-            return now.toLocaleDateString('en-US', { 
-                month: 'short', 
-                day: 'numeric',
-                year: 'numeric'
-            });
-        }
-
-        function displayMessages() {
-            const container = document.getElementById('messagesContainer');
-            
-            if (messages.length === 0) {
-                container.innerHTML = '<div class="no-messages">Be the first to share a message of support.</div>';
-                return;
-            }
-
-            container.innerHTML = messages.map(msg => `
-                <div class="message-card">
-                    <div class="message-header">
-                        <span class="message-author">${msg.name}</span>
-                        <span class="message-date">${msg.date}</span>
-                    </div>
-                    <div class="message-text">${msg.text}</div>
-                </div>
-            `).join('');
-        }
-
-        document.getElementById('messageForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value.trim();
-            const text = document.getElementById('message').value.trim();
-            
-            if (name && text) {
-                messages.unshift({
-                    name: name,
-                    text: text,
-                    date: formatDate()
-                });
-                
-                displayMessages();
-                
-                // Clear form
-                document.getElementById('name').value = '';
-                document.getElementById('message').value = '';
-                
-                // Scroll to messages
-                document.getElementById('messagesContainer').scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'nearest'
-                });
-            }
-        });
-
-        displayMessages();
-    </script>
 </body>
 </html>
