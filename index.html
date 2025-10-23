@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're With You, Rahul</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .intro p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            background: #f8f9fc;
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 1px solid #e1e4ed;
+        }
+
+        .form-section h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .messages-section {
+            margin-top: 50px;
+        }
+
+        .messages-section h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .message-card {
+            background: white;
+            border: 1px solid #e1e4ed;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .message-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: box-shadow 0.3s;
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .message-author {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.05em;
+        }
+
+        .message-date {
+            color: #999;
+            font-size: 0.85em;
+            margin-left: 12px;
+        }
+
+        .message-text {
+            color: #444;
+            line-height: 1.7;
+            font-size: 1em;
+        }
+
+        .no-messages {
+            text-align: center;
+            color: #999;
+            padding: 40px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .form-section {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>We're With You, Rahul</h1>
+            <p>From Your Synchrony Team</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p>
+                    During challenging times, we come together as a team. This space is for all of us 
+                    at Synchrony to share our support and positive thoughts. Your messages of encouragement 
+                    mean more than you know.
+                </p>
+            </div>
+
+            <div class="form-section">
+                <h2>Share Your Message</h2>
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" required placeholder="Share your thoughts, encouragement, or a favorite memory..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Your Support</button>
+                </form>
+            </div>
+
+            <div class="messages-section">
+                <h2>Messages from the Team</h2>
+                <div id="messagesContainer">
+                    <div class="no-messages">Be the first to share a message of support.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const messages = [];
+
+        function formatDate() {
+            const now = new Date();
+            return now.toLocaleDateString('en-US', { 
+                month: 'short', 
+                day: 'numeric',
+                year: 'numeric'
+            });
+        }
+
+        function displayMessages() {
+            const container = document.getElementById('messagesContainer');
+            
+            if (messages.length === 0) {
+                container.innerHTML = '<div class="no-messages">Be the first to share a message of support.</div>';
+                return;
+            }
+
+            container.innerHTML = messages.map(msg => `
+                <div class="message-card">
+                    <div class="message-header">
+                        <span class="message-author">${msg.name}</span>
+                        <span class="message-date">${msg.date}</span>
+                    </div>
+                    <div class="message-text">${msg.text}</div>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const text = document.getElementById('message').value.trim();
+            
+            if (name && text) {
+                messages.unshift({
+                    name: name,
+                    text: text,
+                    date: formatDate()
+                });
+                
+                displayMessages();
+                
+                // Clear form
+                document.getElementById('name').value = '';
+                document.getElementById('message').value = '';
+                
+                // Scroll to messages
+                document.getElementById('messagesContainer').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }
+        });
+
+        displayMessages();
+    </script>
+</body>
+</html>
